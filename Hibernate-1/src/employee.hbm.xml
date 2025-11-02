@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class table="empDetails" name="com.entity.Employee">
+	
+	<id name="empId" type="int"> </id>
+	<property name="empName" type="string"> </property>
+	<property name="salarry" type="double"> </property>
+	</class>
+
+</hibernate-mapping>
+    
