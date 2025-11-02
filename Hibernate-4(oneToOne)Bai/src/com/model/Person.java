@@ -1,55 +1,60 @@
 package com.model;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="PersonBidirection")
 public class Person {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int pid;
+	private String pName;
+	private String pAddress;
+	@OneToOne(cascade = CascadeType.ALL)
+	private Adhar adhar;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int pid;
+	public int getPid() {
+		return pid;
+	}
 
-    private String pname;
-    private String paddress;
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "aadhar_id") // foreign key column in Person table
-    private Aadhar aadhar;
+	public String getpName() {
+		return pName;
+	}
 
-    public Aadhar getAadhar() {
-        return aadhar;
-    }
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
 
-    public void setAadhar(Aadhar aadhar) {
-        this.aadhar = aadhar;
-    }
+	public String getpAddress() {
+		return pAddress;
+	}
 
-    public int getPid() {
-        return pid;
-    }
+	public void setpAddress(String pAddress) {
+		this.pAddress = pAddress;
+	}
 
-    public void setPid(int pid) {
-        this.pid = pid;
-    }
+	public Adhar getAdhar() {
+		return adhar;
+	}
 
-    public String getPname() {
-        return pname;
-    }
+	public void setAdhar(Adhar adhar) {
+		this.adhar = adhar;
+	}
 
-    public void setPname(String pname) {
-        this.pname = pname;
-    }
+	@Override
+	public String toString() {
+		return "Person [pid=" + pid + ", pName=" + pName + ", pAddress=" + pAddress + ", adhar=" + adhar + "]";
+	}
 
-    public String getPaddress() {
-        return paddress;
-    }
 
-    public void setPaddress(String paddress) {
-        this.paddress = paddress;
-    }
-
-    @Override
-    public String toString() {
-        return "Person [pid=" + pid + ", pname=" + pname + ", paddress=" + paddress + ", aadhar=" + aadhar + "]";
-    }
 }

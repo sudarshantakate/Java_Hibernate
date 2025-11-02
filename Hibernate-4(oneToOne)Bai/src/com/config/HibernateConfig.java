@@ -36,14 +36,14 @@ public class HibernateConfig {
 
 			// Hibernate Properties
 			map.put(Environment.DIALECT, "org.hibernate.dialect.MySQL57Dialect");
-			map.put(Environment.HBM2DDL_AUTO, "update");
+			map.put(Environment.HBM2DDL_AUTO, "create");
 			map.put(Environment.SHOW_SQL, true);
 
 			registry = new StandardServiceRegistryBuilder().applySettings(map).build();// encapsulate the all
 																						// configuration of connection
 
 			// create one session factory using registry
-			MetadataSources metadataSources = new MetadataSources(registry).addAnnotatedClass(Person.class).addAnnotatedClass(Aadhar.class);// store data of all properties data
+			MetadataSources metadataSources = new MetadataSources(registry).addAnnotatedClass(Person.class).addAnnotatedClass(Adhar.class);// store data of all properties data
 
 			Metadata md = metadataSources.getMetadataBuilder().build();
 
