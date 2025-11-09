@@ -10,10 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 
-import com.model.Batch;
-import com.model.Course;
-import com.model.Faculty;
-import com.model.Student;
+import com.model.*;
 
 public class HibernateConfig {
 
@@ -22,17 +19,19 @@ public class HibernateConfig {
 	}
 
 	private static SessionFactory sf = null;
-	public static StandardServiceRegistry registry = null;
 
-	public static SessionFactory getConnection() {
+	private static StandardServiceRegistry registry = null;
+
+	public static SessionFactory getSessionFactory() {
 
 		if (sf == null) {
+
 			// Connection Properties
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-			map.put(Environment.URL, "jdbc:mysql://localhost:3306/ClassMS");
-			map.put(Environment.USER, "project");
-			map.put(Environment.PASS, "project123");
+			map.put(Environment.URL, "jdbc:mysql://localhost:3306/college");
+			map.put(Environment.USER, "root");
+			map.put(Environment.PASS, "root");
 
 			// Hibernate Properties
 			map.put(Environment.DIALECT, "org.hibernate.dialect.MySQL57Dialect");
@@ -43,16 +42,12 @@ public class HibernateConfig {
 																						// configuration of connection
 
 			// create one session factory using registry
-			MetadataSources metadataSources = new MetadataSources(registry).addAnnotatedClass(Course.class)
-					.addAnnotatedClass(Faculty.class).addAnnotatedClass(Batch.class).addAnnotatedClass(Student.class);// store
-																														// data
-																														// of
-																														// all
-																														// propertiessdata
+			MetadataSources metadataSources = new MetadataSources(registry).addAnnotatedClass(Employee.class);// store data of all properties data
 
 			Metadata md = metadataSources.getMetadataBuilder().build();
 
 			sf = md.getSessionFactoryBuilder().build();
+
 		}
 		return sf;
 	}

@@ -11,17 +11,28 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Batch Details")
+@Table(name = "Batch_Details")
 public class Batch {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Batch ID")
+	@Column(name = "Batch_ID")
 	private int batchId;
 	
-	@Column(name = "Batch Name")
+	@Column(name = "Batch_Name")
 	private String batchName;
 	
+	@Column(name = "Batch_Time")
+	private String batchTime;
+	
+	public String getBatchTime() {
+		return batchTime;
+	}
+
+	public void setBatchTime(String batchTime) {
+		this.batchTime = batchTime;
+	}
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn
 	private Faculty Faculty;
@@ -52,7 +63,8 @@ public class Batch {
 
 	@Override
 	public String toString() {
-		return "Batch [batchId=" + batchId + ", batchName=" + batchName + ", Faculty=" + Faculty + "]";
+		return "Batch [batchId=" + batchId + ", batchName=" + batchName + ", batchTime=" + batchTime + ", Faculty="
+				+ Faculty + "]";
 	}
 
 	

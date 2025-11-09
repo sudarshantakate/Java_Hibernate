@@ -1,20 +1,25 @@
 package com.dao;
 
+import java.util.List;
+
+import com.model.*;
+
 public interface CMSDao {
 
-	public void addCourseInDao();
+	public void addCourseInDao(Course course);
 
-	public void displayCourseDeatsilsInDao();
+	public List<Course> displayCourseDetailsInDao();
 
-	public void addFacultyInDao();
+	public void addFacultyInDao(Faculty faculty);
 
-	public void displayFacultyDeatsilsInDao();
+	public List<Faculty> displayFacultyDetailsInDao();
 
-	public void addBatchInDao();
-	
-	public void displayBatchDeatsilsInDao();
-	
+	public void addBatchInDao(String batchName, int facultyId);
+
+	public void displayBatchDetailsInDao();
+
 	public void addStudentInDao();
-	
-	public void displayStudentDeatsilsInDao();
+
+	public void displayStudentDetailsInDao();
+
 }

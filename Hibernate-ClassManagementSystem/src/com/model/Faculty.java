@@ -11,24 +11,25 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Faculty Deatils")
+@Table(name = "Faculty_Details")
 public class Faculty {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Faculty ID")
+	@Column(name = "Faculty_ID")
 	private int facultyId;
 	
-	@Column(name = "Faculty Name")
+	
+	@Column(name = "Faculty_Name")
 	private String facultyName;
 	
-	@Column(name = "Faculty Address")
+	@Column(name = "Faculty_Address")
 	private String facultyAddress;
 	
-	@Column(name = "Faculty Mobile NUmber")
+	@Column(name = "Faculty_Mobile_Number")
 	private double facultyMobileNo;
 	
-	@Column(name = "Faculty Email ID")
+	@Column(name = "Faculty_Email_ID")
 	private String facultyEmailID;
 	@OneToOne(cascade =CascadeType.ALL)
 	@JoinColumn

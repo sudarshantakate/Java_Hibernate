@@ -4,18 +4,18 @@ public interface CMSService {
 
 	public void addCourse();
 
-	public void displayCourseDeatsils();
+	public void displayCourseDetails();
 
 	public void addFaculty();
 
-	public void displayFacultyDeatsils();
+	public void displayFacultyDetails();
 
 	public void addBatch();
 	
-	public void displayBatchDeatsils();
+	public void displayBatchDetails();
 	
 	public void addStudent();
 	
-	public void displayStudentDeatsils();
+	public void displayStudentDetails();
 
 }

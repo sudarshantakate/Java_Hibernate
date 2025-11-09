@@ -11,24 +11,24 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Student Details")
+@Table(name = "Student_Details")
 public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Student ID")
+	@Column(name = "Student_ID")
 	private int studentId;
 
-	@Column(name = "Student Name")
+	@Column(name = "Student_Name")
 	private String studentName;
 
-	@Column(name = "Student Address")
+	@Column(name = "Student_Address")
 	private String studentAddress;
 
-	@Column(name = "Student Mobile No.")
+	@Column(name = "Student_Mobile_Number")
 	private double studentMobileNo;
 
-	@Column(name = "Student Email ID")
+	@Column(name = "Student_Email_ID")
 	private String studentEmailId;
 
 	@OneToOne(cascade = CascadeType.ALL)

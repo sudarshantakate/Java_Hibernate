@@ -9,15 +9,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Course Details")
+@Table(name = "Course_Details")
 public class Course {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Course ID")
+	@Column(name = "Course_ID")
 	private int courseId;
 	
-	@Column(name = "Course Name")
+	@Column(name = "Course_Name")
 	private String courseName; 
 	
 
